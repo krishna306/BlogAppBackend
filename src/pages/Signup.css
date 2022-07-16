@@ -1,0 +1,12 @@
+.signup-bg-container{
+    background-image: url("../images/pexels-alex-andrews-816608.jpg") ;
+    background-size: cover;
+    background-position: center;
+    height: 65vh;
+
+}
+
+.signup-form{
+    width: 90%;
+    margin: 20px auto ;
+}
