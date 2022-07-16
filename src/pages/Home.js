@@ -31,7 +31,7 @@ function Home() {
         <MainArticle article={articles[articles.length - 1]} />
         <Col md={9} className="blog-main d-flex pb-4 flex-wrap gap-4">
           {articles.map((article, idx) => (
-            <ArticlePreview article={article} key={idx} />
+            <ArticlePreview article={article} currentUserPost={false} key={idx} />
           ))}
         </Col>
         <Col md={3} className="blog-sidebar py-4">

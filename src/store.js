@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import postsSlice from './features/userSlice'
+import postsSlice from './features/postSlice'
 import userSlice from './features/userSlice'
 import appApi from "./services/appApi";
 import storage from 'redux-persist/lib/storage'; 

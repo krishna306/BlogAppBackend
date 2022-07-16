@@ -19,7 +19,7 @@ function SingleArticlePage() {
       </div>
     );
   }
-  console.log(article);
+
   return(
     <Container >
         <Row>

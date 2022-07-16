@@ -3,8 +3,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const appApi = createApi({
   reducerPath: "appApi",
   baseQuery: fetchBaseQuery({
-    // baseUrl: "http://localhost:8000",
-    baseUrl:"https://blogappbackend2.herokuapp.com/",
+    baseUrl: "http://localhost:8000",
+    // baseUrl:"https://blogappbackend2.herokuapp.com/",
     prepareHeaders: (headers, { getState }) => {
       const token = getState().user.token;
       if (token) {
@@ -13,6 +13,7 @@ export const appApi = createApi({
       return headers;
     },
   }),
+  tagTypes: ["Post", "User"],
   endpoints: (builder) => ({
     loginUser: builder.mutation({
       query: (user) => ({
@@ -54,8 +55,29 @@ export const appApi = createApi({
       query: (id) => ({
         url: `/posts/${id}`,
       }),
+    }),
+    getAllUserPost: builder.query({
+      query: (id) => ({
+        url: `/posts/me`,
+      }),
       providesTags: ["Post"],
     }),
+    deletePost: builder.mutation({
+      query: (id) => ({
+        url: `/posts/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Post"],
+    }),
+    updatePost: builder.mutation({
+      query: ({id,...post}) => ({
+        url: `/posts/${id}`,
+        method: "PATCH",
+        body:post
+      }),
+      invalidatesTags: ["Post"],
+    }),
+
   }),
 });
 
@@ -67,4 +89,7 @@ export const {
   useCreatePostMutation,
   useGetAllPostQuery,
   useGetOnePostQuery,
+  useGetAllUserPostQuery,
+  useDeletePostMutation,
+  useUpdatePostMutation
 } = appApi;
