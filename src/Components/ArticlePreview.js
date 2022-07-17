@@ -21,7 +21,7 @@ function ArticlePreview({ article, currentUserPost }) {
         <Card.Text>
           <div
             dangerouslySetInnerHTML={{
-              __html: content?.substring(0, 400) + "...",
+              __html: content?.substring(0, 100) + "...",
             }}
           />
         </Card.Text>

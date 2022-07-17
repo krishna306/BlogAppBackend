@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
 function SingleArticlePage() {
   const { id } = useParams();
-  const { isLoading, data: article,isError } = useGetOnePostQuery(id);
+  const { isLoading, data: article, isError } = useGetOnePostQuery(id);
   if (isError) {
     return (
       <div>
@@ -14,24 +14,27 @@ function SingleArticlePage() {
   }
   if (isLoading) {
     return (
-      <div className="text-center d-flex justify-content-center align-items-center py-5">
-        <Spinner animation="border" variant="primary" />
+      <div className="text-center mt-5">
+        <Spinner animation="border" variant="primary" role="status" />
+        <br />
+        <h2 className="py-2">Loading...</h2>
       </div>
     );
   }
 
-  return(
-    <Container >
-        <Row>
-            <Col md = {8} style ={{margin:"0 auto"}}>
-                <img src = {article.image} style ={{width:"100%",maxHeight:"400px",objectFit:"cover"}} />
-                <h1>{article.title}</h1>
-                <p>By {article.creator.email}</p>
-                <div dangerouslySetInnerHTML={{__html:article.content}} ></div>
-            </Col>
-            <Col md = {4}>
-            </Col>
-        </Row>
+  return (
+    <Container>
+      <Row style={{width:"80%",marginLeft:"10%"}} className="">
+        <Col  style={{ margin: "0 auto" }}>
+          <img
+            src={article.image}
+            style={{ width: "100%", maxHeight: "500px", objectFit: "cover" }}
+          />
+          <h1>{article.title}</h1>
+          <p>By {article.creator.email}</p>
+          <div dangerouslySetInnerHTML={{ __html: article.content }}></div>
+        </Col>
+      </Row>
     </Container>
   );
 }

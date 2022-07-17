@@ -16,9 +16,10 @@ function Home() {
   }
   if (isLoading) {
     return (
-      <div className="text-center d-flex justify-content-center align-items-center py-5">
-        <Spinner animation="border" variant="primary" />
-        <h1 className="text-center py-5">Loading...</h1>
+      <div className="text-center mt-5">
+        <Spinner animation="border" variant="primary" role="status" />
+        <br />
+        <h2 className="py-2">Loading...</h2>
       </div>
     );
   }

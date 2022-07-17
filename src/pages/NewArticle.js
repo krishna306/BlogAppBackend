@@ -69,8 +69,10 @@ function NewArticle() {
 
   if (isLoading) {
     return (
-      <div>
-        <h1 className="text-center py-4">Creating your article...</h1>
+      <div className="text-center mt-5">
+        <Spinner animation="border" variant="primary" role="status" />
+        <br />
+        <h2 className="py-2">Creating Article...</h2>
       </div>
     );
   }
@@ -113,7 +115,7 @@ function NewArticle() {
                 history: { inDropdown: true },
               }}
             />
-            <Form.Select>
+            <Form.Select className="mb-4">
               <option>Select Category</option>
               <option value="technology">Technology</option>
               <option value="travel">Travel</option>

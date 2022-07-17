@@ -16,7 +16,7 @@ import draftToHtml from "draftjs-to-html";
 function EditArticle() {
   const { id } = useParams();
   const posts = useSelector((state) => state.post);
-  const postToEdit = posts.find((post) => post._id == id);
+  const postToEdit = posts.find((post) => post._id === id);
   const [updateArticle, { isLoading, isSuccess }] = useUpdatePostMutation();
   const [title, setTitle] = useState(postToEdit.title);
   const [url] = useState(postToEdit.image);
@@ -46,9 +46,11 @@ function EditArticle() {
 
   if (isLoading) {
     return (
-      <div>
-        <h1 className="text-center py-4">Updating your article...</h1>
-      </div>
+      <div className="text-center mt-5">
+      <Spinner animation="border" variant="primary" role="status" />
+      <br />
+      <h2 className="py-2">Updating Your Article...</h2>
+    </div>
     );
   }
   if (isSuccess) {
