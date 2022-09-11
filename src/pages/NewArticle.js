@@ -6,7 +6,7 @@ import draftToHtml from "draftjs-to-html";
 import { useCreatePostMutation } from "../services/appApi";
 import "./NewArticle.css";
 import { useNavigate } from "react-router-dom";
-import nature from "../images/313811274a28746379ebf4d4fcf7842b.jpg";
+import nature from "../images/1546384774956.jpg";
 function NewArticle() {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState(null);
