@@ -4,7 +4,7 @@ export const appApi = createApi({
   reducerPath: "appApi",
   baseQuery: fetchBaseQuery({
     // baseUrl: "http://localhost:8000",
-    baseUrl:"https://blogappbackend2.herokuapp.com/",
+    baseUrl:"https://blog-app-krishna306.vercel.app/",
     prepareHeaders: (headers, { getState }) => {
       const token = getState().user.token;
       if (token) {
