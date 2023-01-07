@@ -1,5 +1,6 @@
 import React from 'react'
-const year  = new Date().getFullYear;
+const year  = new Date().getFullYear();
+console.log(year)
 function Footer() {
   return (
     <div className='bg-light mt-4 py-4 text-center'>Copyright {year} @Krishna Kumar</div>
