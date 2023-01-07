@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div className='bg-light mt-4 py-4 text-center'>Copyright 2022 @Krishna Kumar</div>
+    <div className='bg-light mt-4 py-4 text-center'>Copyright {new Date().getFullYear()} @Krishna Kumar</div>
   )
 }
 
